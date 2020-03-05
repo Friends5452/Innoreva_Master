@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "342500614772",
+    "firebase_url": "https://innoreva-master.firebaseio.com",
+    "project_id": "innoreva-master",
+    "storage_bucket": "innoreva-master.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342500614772:android:aa23ca607eecfa27be2721",
+        "android_client_info": {
+          "package_name": "com.example.innorevamaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342500614772-qd1ie5va20o4fkmgtkvg6r3fgn9ni452.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuc1GjyaXzWX-C7WuhRHU3V-7tJH6a0tg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342500614772-qd1ie5va20o4fkmgtkvg6r3fgn9ni452.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
