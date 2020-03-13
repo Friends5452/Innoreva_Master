@@ -82,6 +82,11 @@ public class EditCurrentActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(imageUri!=null)
+                {
+                    StorageReference photoRef=firebaseStorage.getReferenceFromUrl(imageUri.toString());
+                    photoRef.delete();
+                }
                 Intent intent =new Intent(Intent.ACTION_GET_CONTENT);
                 intent.setType("image/jpeg");
                 intent.putExtra(Intent.EXTRA_LOCAL_ONLY,true);
