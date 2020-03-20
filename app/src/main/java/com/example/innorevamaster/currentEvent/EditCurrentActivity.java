@@ -1,4 +1,4 @@
-package com.example.innorevamaster.currentevents;
+package com.example.innorevamaster.currentEvent;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

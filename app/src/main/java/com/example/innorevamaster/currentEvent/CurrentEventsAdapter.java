@@ -1,4 +1,4 @@
-package com.example.innorevamaster.currentevents;
+package com.example.innorevamaster.currentEvent;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.example.innorevamaster.currentevents;
+package com.example.innorevamaster.currentEvent;
 
 public class CurrentEvent {
     String eventImageUrl;
