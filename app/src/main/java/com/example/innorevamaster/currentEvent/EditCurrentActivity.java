@@ -50,7 +50,7 @@ public class EditCurrentActivity extends AppCompatActivity {
 
 
         eventDescriptionEditText=findViewById(R.id.edit_event_description);
-        mCurrentDatabseReference=firebaseDatabase.getReference().child("CurrentEvents");
+        mCurrentDatabseReference=firebaseDatabase.getReference().child(getResources().getString(R.string.current_event_path));
         circleImageView=findViewById(R.id.event_circular_image);
         floatingActionButton=findViewById(R.id.floatingActionButton2);
         saveButton=findViewById(R.id.save_current_events);

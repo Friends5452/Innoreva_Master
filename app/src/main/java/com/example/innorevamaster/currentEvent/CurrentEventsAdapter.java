@@ -1,15 +1,19 @@
 package com.example.innorevamaster.currentEvent;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.innorevamaster.R;
 
 import java.util.ArrayList;
@@ -20,7 +24,7 @@ public class CurrentEventsAdapter extends RecyclerView.Adapter<CurrentEventsAdap
 
     private ArrayList<CurrentEvent> currentEventsArrayList;
     private Context context;
-
+    private static final String TAG = "CurrentEventsAdapter";
     public CurrentEventsAdapter(Context context, ArrayList<CurrentEvent> currentEventsArrayList) {
         this.context=context;
         this.currentEventsArrayList=currentEventsArrayList;
@@ -38,8 +42,13 @@ public class CurrentEventsAdapter extends RecyclerView.Adapter<CurrentEventsAdap
     @Override
     public void onBindViewHolder(@NonNull CurrentEventViewHolder holder, int position) {
 
-        holder.descriptionTextView.setText(currentEventsArrayList.get(position).eventDescriptionString);
-
+        holder.descriptionTextView.setText(currentEventsArrayList.get(position).getEventDescriptionString());
+        Glide.with(context)
+                .asBitmap()
+                .placeholder(R.drawable.loadinggif)
+                .load(currentEventsArrayList.get(position).getEventImageUrl())
+                .into(holder.eventImage);
+        Toast.makeText(context, "glide", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -48,7 +57,7 @@ public class CurrentEventsAdapter extends RecyclerView.Adapter<CurrentEventsAdap
     }
 
     public static class CurrentEventViewHolder extends RecyclerView.ViewHolder {
-        CircleImageView eventImage;
+        ImageView eventImage;
         TextView descriptionTextView;
         CardView eventCardView;
 

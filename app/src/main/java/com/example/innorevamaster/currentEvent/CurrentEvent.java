@@ -1,9 +1,13 @@
 package com.example.innorevamaster.currentEvent;
 
 public class CurrentEvent {
-    String eventImageUrl;
-    String eventDescriptionString;
+    private String eventImageUrl;
+    private String eventDescriptionString;
 
+    public CurrentEvent()
+    {
+
+    }
     public CurrentEvent(String eventImageUrl, String eventDescriptionString) {
         this.eventImageUrl = eventImageUrl;
         this.eventDescriptionString = eventDescriptionString;

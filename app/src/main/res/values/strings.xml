@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Innoreva Master</string>
+    <string name="current_event_path">CurrentEvents</string>
 </resources>
