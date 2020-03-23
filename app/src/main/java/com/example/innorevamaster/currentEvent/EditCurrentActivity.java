@@ -75,7 +75,10 @@ public class EditCurrentActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(!eventDescriptionEditText.getText().toString().isEmpty()||imageUri!=null) {
                     CurrentEvent currentEvent = new CurrentEvent(imageUri.toString(), eventDescriptionEditText.getText().toString());
-                    mCurrentDatabseReference.push().setValue(currentEvent);
+                    currentEvent.setEventKey(mCurrentDatabseReference.push().getKey());
+                    DatabaseReference newDatabase=FirebaseDatabase.getInstance().getReference().child("CurrentEvents/"+currentEvent.getEventKey());
+                    newDatabase.setValue(currentEvent);
+                    Toast.makeText(EditCurrentActivity.this, currentEvent.getEventKey(), Toast.LENGTH_SHORT).show();
                 }
             }
         });

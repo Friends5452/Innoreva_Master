@@ -48,7 +48,7 @@ public class CurrentEventsAdapter extends RecyclerView.Adapter<CurrentEventsAdap
                 .placeholder(R.drawable.loadinggif)
                 .load(currentEventsArrayList.get(position).getEventImageUrl())
                 .into(holder.eventImage);
-        Toast.makeText(context, "glide", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(context, currentEventsArrayList.get(position).toString(), Toast.LENGTH_SHORT).show();
     }
 
     @Override

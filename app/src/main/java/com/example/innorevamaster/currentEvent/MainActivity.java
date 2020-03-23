@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference currentEventDatabaseReference;
     private ChildEventListener mChildEventListener;
     private FloatingActionButton addFloatingActionButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +40,15 @@ public class MainActivity extends AppCompatActivity {
         currentEventDatabaseReference=mFirebaseDatabase.getReference().child(currentEventPath);
         addFloatingActionButton=findViewById(R.id.addCurrentEventfloatingActionButton);
         attachDatabaseReadListener();
-        initRecyclerView();
-        currentEventArrayList.add(new CurrentEvent("https://firebasestorage.googleapis.com/v0/b/innoreva-master.appspot.com/o/current_event_photos%2Fimage%3A1077142?alt=media&token=b7bd3418-c2e1-41f6-b8f0-4462d1045aae","coded"));
+        addFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(MainActivity.this,EditCurrentActivity.class);
+                startActivity(i);
+            }
+        });
+
+      //  currentEventArrayList.add(new CurrentEvent("https://firebasestorage.googleapis.com/v0/b/innoreva-master.appspot.com/o/current_event_photos%2Fimage%3A1077142?alt=media&token=b7bd3418-c2e1-41f6-b8f0-4462d1045aae","coded"));
 
     }
 
@@ -59,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "The item will be added fast", Toast.LENGTH_SHORT).show();
                     CurrentEvent currentEvent = dataSnapshot.getValue(CurrentEvent.class);
                     currentEventArrayList.add(currentEvent);
+                    initRecyclerView();
+                         //Toast.makeText(MainActivity.this, currentEvent.toString(), Toast.LENGTH_SHORT).show();
                 }
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {}
                 public void onChildRemoved(DataSnapshot dataSnapshot) {}
