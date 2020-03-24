@@ -79,6 +79,7 @@ public class EditCurrentActivity extends AppCompatActivity {
                     DatabaseReference newDatabase=FirebaseDatabase.getInstance().getReference().child("CurrentEvents/"+currentEvent.getEventKey());
                     newDatabase.setValue(currentEvent);
                     Toast.makeText(EditCurrentActivity.this, currentEvent.getEventKey(), Toast.LENGTH_SHORT).show();
+                    finish();
                 }
             }
         });

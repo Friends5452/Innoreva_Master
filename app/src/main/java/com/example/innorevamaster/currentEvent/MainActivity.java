@@ -27,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<CurrentEvent> currentEventArrayList=new ArrayList<>();
     private static final String TAG = "MainActivity";
     private FirebaseDatabase mFirebaseDatabase;
+    public static CurrentEventsAdapter adapter;
     private DatabaseReference currentEventDatabaseReference;
-    private ChildEventListener mChildEventListener;
+    static ChildEventListener mChildEventListener;
     private FloatingActionButton addFloatingActionButton;
 
     @Override
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     private void initRecyclerView(){
         Log.d(TAG, "initRecyclerView: init recyclerview.");
         RecyclerView recyclerView = findViewById(R.id.current_events_recycler_view);
-        CurrentEventsAdapter adapter = new CurrentEventsAdapter(this,currentEventArrayList);
+         adapter = new CurrentEventsAdapter(this,currentEventArrayList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
